@@ -1,0 +1,23 @@
+{
+  "LOG": true,
+  "API_TIMEOUT_MS": 600000,
+  "Providers": [
+    {
+      "name": "deepseek",
+      "api_base_url": "https://api.deepseek.com/v1",
+      "api_key": "YOUR_DEEPSEEK_API_KEY",
+      "models": [
+        "deepseek-chat",
+        "deepseek-coder",
+        "deepseek-reasoner"
+      ],
+      "transformer": {
+        "use": ["deepseek"]
+      }
+    }
+  ],
+  "Router": {
+    "default": "deepseek,deepseek-chat",
+    "think": "deepseek,deepseek-reasoner"
+  }
+}

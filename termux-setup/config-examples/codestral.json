@@ -1,0 +1,20 @@
+{
+  "LOG": true,
+  "API_TIMEOUT_MS": 600000,
+  "Providers": [
+    {
+      "name": "codestral",
+      "api_base_url": "https://codestral.mistral.ai/v1/chat/completions",
+      "api_key": "YOUR_MISTRAL_API_KEY",
+      "models": [
+        "codestral-latest",
+        "codestral-2501"
+      ],
+      "transformer": {}
+    }
+  ],
+  "Router": {
+    "default": "codestral,codestral-latest",
+    "think": "codestral,codestral-latest"
+  }
+}

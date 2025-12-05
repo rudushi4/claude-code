@@ -1,0 +1,32 @@
+{
+  "LOG": true,
+  "API_TIMEOUT_MS": 600000,
+  "Providers": [
+    {
+      "name": "gemini",
+      "api_base_url": "https://generativelanguage.googleapis.com/v1beta/models/",
+      "api_key": "YOUR_GOOGLE_API_KEY",
+      "models": ["gemini-2.5-flash", "gemini-2.5-pro"],
+      "transformer": {"use": ["gemini"]}
+    },
+    {
+      "name": "codestral",
+      "api_base_url": "https://codestral.mistral.ai/v1/chat/completions",
+      "api_key": "YOUR_MISTRAL_API_KEY",
+      "models": ["codestral-latest"],
+      "transformer": {}
+    },
+    {
+      "name": "deepseek",
+      "api_base_url": "https://api.deepseek.com/v1",
+      "api_key": "YOUR_DEEPSEEK_API_KEY",
+      "models": ["deepseek-chat", "deepseek-reasoner"],
+      "transformer": {"use": ["deepseek"]}
+    }
+  ],
+  "Router": {
+    "default": "gemini,gemini-2.5-flash",
+    "think": "deepseek,deepseek-reasoner",
+    "code": "codestral,codestral-latest"
+  }
+}
